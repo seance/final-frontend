@@ -222,7 +222,7 @@ _.reduce(objs, function(a, v) { return a + v.value }, 0)
 // imperative
 var s = {}
 for (var i=0; i&lt;objs.length; i++) {
-    (s[objs[i].type] || (s[objs[i].type] = [])).push(objs[i].value)
+    (s[objs[i].type] || (s[objs[i].type] = [])).push(objs[i])
 }
                     </code></pre>
                     <pre class="fragment"><code data-trim contenteditable>
@@ -232,7 +232,7 @@ _.groupBy(objs, function(v) { return v.type })
                     <pre class="fragment"><code data-trim contenteditable>
 // functional-ish, without groupBy
 var groupByType = function(a, v) {
-    (a[v.type] || (a[v.type] = [])).push(v.value)
+    (a[v.type] || (a[v.type] = [])).push(v)
     return a
 }
 
