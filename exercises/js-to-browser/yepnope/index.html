@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <script src="lib/modernizr.js"></script>
+    <script src="app.js"></script>
+    <script src="geo-frontend.js"></script>
 </head>
 <body>
-
+    <h1>
+        <a href="http://yepnopejs.com/">YepNope</a> packaged with
+        <a href="http://modernizr.com/">Modernizr</a>
+    </h1>
+    <script>
+        yepnope({
+            test: Modernizr.geolocation,
+            yep: 'geo-yep.js',
+            nope: 'geo-nope.js',
+            callback: function() {
+                App.run()
+            }
+        })
+    </script>
 </body>
 </html>
