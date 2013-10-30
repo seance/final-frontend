@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>The Final Frontend</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="A study of The Frontend">
+		<meta name="author" content="Jukka Viinamäki">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/starfield.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -37,24 +37,265 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+                    <h3>Code Trek:</h3>
+                    <h1>The Final Frontend</h1>
+
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small><a href="http://github.com/seance">Jukka Viinamäki</a> // <a href="http://www.futurice.com">Futurice</a></small>
 					</p>
 				</section>
+
+                <section>
+                    <h2>PART I: Things that go in the browser</h2>
+                </section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+					<h3>What is HTML5?</h3>
+					<ul>
+                        <li>also known as Open Web Platform</li>
+                        <li>umbrella term, HTML, JS, CSS, others</li>
+                        <li>core specification & <a href="http://dev.w3.org/html5/decision-policy/html5-2014-plan.html#modularity">related specifications</a></li>
+					</ul>
 				</section>
+
+                <section>
+                    <h3>What is HTML5?</h3>
+                    <img src="img/HTML5.png"/>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why HTML5?</h3>
+                        <ul>
+                            <li>guided by <a href="http://www.w3.org/TR/html-design-principles/">design principles</a> toward standard</li>
+                            <li>reduce need for proprietary plugins</li>
+                            <li>provide multimedia capabilities</li>
+                            <li>simplify things with more semantic markup</li>
+                            <li>learn from web best practises</li>
+                            <li>the DOM is now an integral part</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Uhh, what is the DOM?</h4>
+                        <img src="img/dom.jpg"/>
+                    </section>
+                    <section>
+                        <h4>Yes, the Document Object Model</h4>
+                        <img src="img/dom-happy.png"/>
+                        <div>
+                            <small><a href="http://www.w3.org/TR/DOM-Level-3-Core/introduction.html">The DOM</a></small>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Who says what's HTML5?</h3>
+                    <ul>
+                        <li>HTML5 is developed by <a href="http://www.w3.org/">W3C</a> and <a href="http://www.whatwg.org/">WHATWG</a></li>
+                        <li>WHATWG describes HTML5 as "living standard"</li>
+                        <li>W3C final recommendation planned in 2014</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Where do I learn more?</h3>
+                    <ul>
+                        <li>HTML5 Please <a href="http://html5please.com">html5please.com</a></li>
+                        <li>HTML5 Rocks <a href="http://html5rocks.com">html5rocks.com</a></li>
+                        <li>Can I Use <a href="http://caniuse.com">caniuse.com</a></li>
+                        <li>MDN <a href="http://developer.mozilla.org">developer.mozilla.org</a></li>
+                        <li>W3C <a href="http://w3.org">w3.org</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>JavaScript</h3>
+                    <ul>
+                        <li>zero to hero in 18 years</li>
+                        <li>Java Applets => JVM Backends</li>
+                        <li>web scripting => <a href="http://nodejs.org/">Node.js</a>, <a href="http://tessel.io">Tessel.io</a></li>
+                        <li>Crockford - JavaScript: The Good Parts</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>JavaScript features</h3>
+                    <ul>
+                        <li>first-class function values</li>
+                        <li>dynamic objects and prototypal inheritance</li>
+                        <li>object and array literals (JSON)</li>
+                    </ul>
+                    <pre><code data-trim contenteditable>
+var f = function(x) { return x + 1 }
+                    </code></pre>
+                    <pre><code data-trim contenteditable>
+var p = { title: 'The Prototype' }
+var F = function() {}
+F.prototype = p
+new F().title // => The Prototype
+                    </code></pre>
+                    <pre><code data-trim contenteditable>
+{"some": [1, "simple", "json"]}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>JavaScript scopes</h3>
+                    <ul>
+                        <li>global and function scope - no block scope</li>
+                        <li>lexical scope, hoisting, closures</li>
+                        <li>module pattern</li>
+                    </ul>
+                    <pre><code data-trim contenteditable>
+var module = (function() {
+    var private_var = 0
+    {
+        var another = 1
+    }
+
+    return {
+        inc: function() {
+            return private_var++
+        }
+    }
+})()
+                    </code></pre>
+                    <aside class="notes">
+                        What is `module`? Function, object? Could you reference `another` inside `inc`?
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>JavaScript: this</h3>
+                    <ul>
+                        <li>What `<code>this</code>` means depends on invocation pattern</li>
+                        <li>method: the object the method is bound to</li>
+                        <li>function: the global object</li>
+                        <li>constructor: the object created via `<code>new</code>`</li>
+                        <li>apply: the first argument to apply</li>
+                    </ul>
+
+                </section>
+
+                <section>
+                    <h3>Functional programming in JS</h3>
+                    <ul>
+                        <li>Functional programming utilities e.g. from <a href="http://lodash.com/">Lo-Dash</a></li>
+                    </ul>
+
+                    <pre><code data-trim contenteditable>
+var objs = ... // [{type: string, value: number}]
+                    </code></pre>
+                    <pre class="fragment"><code data-trim contenteditable>
+// imperative
+var a = []
+for (var i=0; i&lt;objs.length; i++) {
+    if (a.indexOf(objs[i].type) < 0) {
+        a.push(objs[i].type)
+    }
+}
+                    </code></pre>
+                    <pre class="fragment"><code data-trim contenteditable>
+// functional
+_.unique(_.map(objs, function(v) { return v.type }))
+                    </code></pre>
+                </section>
+
+                <section data-transition="none">
+                    <h3>Functional programming in JS</h3>
+                    <pre><code data-trim contenteditable>
+// imperative
+var s = 0
+for (var i=0; i&lt;objs.length; i++) {
+    s += objs[i].value
+}
+                    </code></pre>
+                    <pre class="fragment"><code data-trim contenteditable>
+// functional
+_.reduce(objs, function(a, v) { return a + v.value }, 0)
+                    </code></pre>
+                </section>
+
+                <section data-transition="none">
+                    <h3>Functional programming in JS</h3>
+                    <pre><code data-trim contenteditable>
+// imperative
+var s = {}
+for (var i=0; i&lt;objs.length; i++) {
+    (s[objs[i].type] || (s[objs[i].type] = [])).push(objs[i].value)
+}
+                    </code></pre>
+                    <pre class="fragment"><code data-trim contenteditable>
+// functional
+_.groupBy(objs, function(v) { return v.type })
+                    </code></pre>
+                    <pre class="fragment"><code data-trim contenteditable>
+// functional-ish, without groupBy
+var groupByType = function(a, v) {
+    (a[v.type] || (a[v.type] = [])).push(v.value)
+    return a
+}
+
+_.reduce(objs, groupByType, {})
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Functional programming in JS</h3>
+                    <ul>
+                        <li>hoisting: are the names <code>a</code>, <code>i</code>, <code>s</code> already bound in scope?</li>
+                        <li>indexing: zero based or not? &lt; or &lt;= or what?</li>
+                        <li>side effects: what else happens?</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>FP basic building blocks</h3>
+                    <ul>
+                        <li>map: transform each element</li>
+                        <li>reduce: reduce a collection to single value</li>
+                        <li>filter: select elements</li>
+                        <li>recursion: solve simpler sub-problem</li>
+                        <li class="fragment">no tail call optimization in JavaScript</li>
+                        <li class="fragment">generalized to functors, applicatives, monads</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Exercise: Quicksort</h3>
+                    <pre><code data-trim contenteditable>
+quicksort(array):
+    - quicksort of [] is []
+    - quicksort of [head:tail] is
+        quicksort of elements <= head in tail, concatenated with
+        head, concatenated with
+        quicksort of elements > head in tail
+                    </code></pre>
+                    <pre class="fragment"><code data-trim contenteditable>
+function quicksort(xs) {
+    var head   = _.head(xs),
+        smalls = _.filter(_.tail(xs), function(x) { return x <= head }),
+        bigs   = _.filter(_.tail(xs), function(x) { return x > head })
+
+    return head
+        ? quicksort(smalls).concat(head).concat(quicksort(bigs))
+        : []
+}
+                    </code></pre>
+                    <aside class="notes">
+                        Check: correct sort, preserve duplicates; Radix; Array.sort()
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Getting the JS to the Browser</h3>
+                    <ul>
+                        <li>Where to put what</li>
+                        <li>Namespaces</li>
+                        <li>Dependencies</li>
+                        <li>Optional dependencies</li>
+                    </ul>
+                </section>
 
 				<!-- Example of nested vertical slides -->
 				<section>

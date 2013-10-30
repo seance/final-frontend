@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: 'bajoranregular';
-    src: url('ba-webfont.eot');
-    src: url('ba-webfont.eot?#iefix') format('embedded-opentype'),
-         url('ba-webfont.woff') format('woff'),
-         url('ba-webfont.ttf') format('truetype'),
-         url('ba-webfont.svg#bajoranregular') format('svg');
+    src: url('../lib/font/ba-webfont.eot');
+    src: url('../lib/font/ba-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../lib/font/ba-webfont.woff') format('woff'),
+         url('../lib/font/ba-webfont.ttf') format('truetype'),
+         url('../lib/font/ba-webfont.svg#bajoranregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
