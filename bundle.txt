@@ -1,0 +1,2 @@
+git bundle create frontend.bundle --all
+git clone frontend.bundle
