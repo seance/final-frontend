@@ -9,6 +9,9 @@ module.exports = function(grunt) {
                     baseUrl: '.',
                     deps: ['app'],
                     insertRequire: ['app'],
+                    preserveLicenseComments: false,
+                    generateSourceMaps: true,
+                    optimize: 'uglify2',
                     name: 'lib/almond',
                     out: 'build.js'
                 }
