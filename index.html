@@ -277,7 +277,7 @@ function quicksort(xs) {
         smalls = _.filter(_.tail(xs), function(x) { return x <= head }),
         bigs   = _.filter(_.tail(xs), function(x) { return x > head })
 
-    return head
+    return (head !== undefined)
         ? quicksort(smalls).concat(head).concat(quicksort(bigs))
         : []
 }
