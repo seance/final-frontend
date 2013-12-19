@@ -153,3 +153,30 @@ body {
   color: #13daec;
   content: "\0060";
 }
+
+.spoiler {
+    position: relative;
+    width: 90%;
+    margin: 15px auto !important;
+}
+
+.spoiler .spoiler-content {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+.spoiler .spoiler-warning {
+    position: absolute;
+    z-index: 9001;
+    width: 100%;
+    height: 100%;
+    margin 15px auto;
+    color: #dcdcdc;
+    background-color: #3f3f3f;
+    transition: all 0.1s linear;
+}
+
+.spoiler .spoiler-warning:hover {
+    opacity: 0;
+}

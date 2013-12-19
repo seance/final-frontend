@@ -260,10 +260,19 @@ _.reduce(objs, groupByType, {})
                         <li class="fragment">generalized to functors, applicatives, monads</li>
                     </ul>
                 </section>
+                
+                <section>
+                    <h3>Jasmine interlude...</h3>
+                    <ul>
+                        <li>Jasmine <a href="http://pivotal.github.io/jasmine/">http://pivotal.github.io/jasmine/</a></li>
+                    </ul>
+                </section>
 
                 <section>
                     <h3>Exercise: Quicksort</h3>
                     <pre><code data-trim contenteditable>
+// pseudocode
+
 quicksort(array):
     - quicksort of [] is []
     - quicksort of [head:tail] is
@@ -271,27 +280,27 @@ quicksort(array):
         head, concatenated with
         quicksort of elements > head in tail
                     </code></pre>
-                    <pre class="fragment"><code data-trim contenteditable>
+                    <div class="fragment spoiler">
+                        <div class="spoiler-warning">
+                            -- SPOILER --<br/>
+                            <small>(hover to reveal)</small>
+                        </div>
+                        <pre class="spoiler-content"><code data-trim contenteditable>
 function quicksort(xs) {
     var head   = _.head(xs),
         smalls = _.filter(_.tail(xs), function(x) { return x <= head }),
         bigs   = _.filter(_.tail(xs), function(x) { return x > head })
-
+    
     return (head !== undefined)
         ? quicksort(smalls).concat(head).concat(quicksort(bigs))
         : []
 }
-                    </code></pre>
+        
+                        </code></pre>
+                    </div>
                     <aside class="notes">
                         Check: correct sort, preserve duplicates; Radix; Array.sort()
                     </aside>
-                </section>
-
-                <section>
-                    <h3>Jasmine interlude...</h3>
-                    <ul>
-                        <li>Jasmine <a href="http://pivotal.github.io/jasmine/">http://pivotal.github.io/jasmine/</a></li>
-                    </ul>
                 </section>
 
                 <section>
